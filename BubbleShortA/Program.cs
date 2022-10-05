@@ -44,5 +44,28 @@ namespace BubbleShortA
         }
         public void BubbleSortArray()
         {
-            for (int i = 1;)
+            for (int i = 1; i < n; i++)
+            {
+                for (int j = 0; j < n - i; j++)
+                {
+                    if (a[j] > a[j + 1])
+                    {
+                        int temp;
+                        temp = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = temp;
+                    }
+                }
+            }
         }
+        static void Main(string[] args)
+        {
+            Program mylist = new Program();
+            mylist.read();
+            mylist.BubbleSortArray();
+            mylist.display();
+            Console.WriteLine("\n\nTekan Tombol Apa Saja Untuk Keluar.");
+            Console.Read();
+        }
+    }
+}
